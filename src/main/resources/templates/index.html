@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>开发服务引擎接口可能用到的工具</title>
+</head>
+<body>
+<h1>开发服务引擎接口的工具</h1>
+<h2>根据模型表格转换成输出的实体类属性，和sql查询/建表语句</h2>
+<form action="/createFiled" method="get">
+    <table>
+        <tr>
+            <th>字段中文名</th>
+            <th>字段英文名</th>
+            <th>数据类型</th>
+            <th>是否主键</th>
+            <th>表英文名</th>
+        </tr>
+        <tr>
+            <td><textarea rows="10" name="memo"></textarea></td>
+            <td><textarea rows="10" name="name"></textarea></td>
+            <td><textarea rows="10" name="type"></textarea></td>
+            <td><textarea rows="10" name="isPrimaryKey"></textarea></td>
+            <td><textarea rows="5" name="tableName"></textarea></td>
+        </tr>
+    </table>
+    <input type="submit" value="生成">
+</form>
+<h2>xml</h2>
+<form action="/parseXML" method="get">
+    <textarea name="xml" rows="20" cols="80"></textarea>
+    <br>
+    <input type="submit" value="生成接口使用文档">
+    &nbsp;&nbsp;&nbsp;
+
+</form>
+</body>
+</html>
