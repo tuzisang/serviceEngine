@@ -34,12 +34,12 @@ public class CreateFieldController {
         String[] camelNameArr = Arrays.stream(nameArr)
                 .map(CreateFieldController::toCamelCase)
                 .toArray(String[]::new);
-        // 生成sql查询语句
+        // 生成 sql查询语句
         String sqlQuery = IntStream.range(0, nameArrLen)
                 .mapToObj(i -> nameArr[i] + " as " + camelNameArr[i])
                 .collect(Collectors.joining(",\n    ", "select\n    ", "\nfrom " + tableName));
 
-        // 生成sql建表语句
+        // 生成 sql建表语句
         String[] tableNameArr = tableName.split("\\.");
         String createDataBase = "Create Database If Not Exists "+ tableNameArr[0] +
                 " Character Set UTF8;\nuse "+ tableNameArr[0] +
